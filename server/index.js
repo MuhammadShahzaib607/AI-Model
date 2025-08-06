@@ -34,7 +34,11 @@ app.get("/", (req, res) => {
     })
 })
 
-app.listen(8000, () => {
-    console.log("server 8000 ke port pe chal rha hai")
-})
+if (process.env.NODE_ENV !== 'production') {
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    });
+}
 
+export default app;
