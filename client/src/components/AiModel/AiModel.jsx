@@ -37,7 +37,7 @@ const AiModel = () => {
     setLoading(true)
 
     try {
-      const res = await axios.post("http://localhost:8000/", {
+      const res = await axios.post("https://ai-model-orcin-one.vercel.app/", {
         prompt: userInput
       })
 
