@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
     })
 })
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'NODE_ENV') {
     const port = process.env.PORT || 3000;
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);
