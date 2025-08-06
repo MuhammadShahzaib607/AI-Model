@@ -1,0 +1,170 @@
+.aiModel {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .aiChatbot {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loading {
+    color: #999;
+    font-style: italic;
+    padding: 10px 20px;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1 }
+    50% { opacity: 0.5 }
+  }
+
+  .messages {
+    flex: 1;
+    width: 100%;
+    padding: 20px 8%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
+    }
+  }
+
+  .inputContainer {
+    padding: 16px 8%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e2e2;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    gap: 12px;
+
+    input {
+      flex: 1;
+      height: 48px;
+      padding: 0 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: #f3f4f6;
+      font-size: 15px;
+      color: #333;
+      transition: 0.3s ease;
+      box-shadow: inset 0 0 0 1px #ddd;
+
+      &::placeholder {
+        color: #999;
+        font-weight: 400;
+      }
+
+      &:focus {
+        background-color: #fff;
+        box-shadow: inset 0 0 0 2px #7b5fff;
+        outline: none;
+      }
+    }
+
+    button {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #7b5fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      img {
+        width: 20px;
+        filter: brightness(0) invert(1);
+      }
+
+      &:hover {
+        background-color: #624dff;
+      }
+    }
+  }
+
+  // 🌐 RESPONSIVE BREAKPOINTS
+  @media (max-width: 1024px) {
+    .messages {
+      padding: 20px 6%;
+    }
+
+    .inputContainer {
+      padding: 14px 6%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .messages {
+      padding: 16px 5%;
+      gap: 16px;
+    }
+
+    .inputContainer {
+      padding: 12px 5%;
+      gap: 10px;
+
+      input {
+        height: 44px;
+        font-size: 14px;
+        padding: 0 14px;
+      }
+
+      button {
+        width: 44px;
+        height: 44px;
+
+        img {
+          width: 18px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .messages {
+      padding: 12px 4%;
+      gap: 12px;
+    }
+
+    .inputContainer {
+      padding: 10px 4%;
+      gap: 8px;
+
+      input {
+        height: 42px;
+        font-size: 13px;
+        padding: 0 12px;
+      }
+
+      button {
+        width: 42px;
+        height: 42px;
+
+        img {
+          width: 16px;
+        }
+      }
+    }
+  }
+
+}
